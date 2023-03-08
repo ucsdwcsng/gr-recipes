@@ -17,16 +17,12 @@
 # Boston, MA 02110-1301, USA.
 #
 
-category: hardware
-configuredir: software/libosmosdr/build
-depends:
-- libusb
-description: Collection of SDR related software and hardware projects
-gitbranch: master
-inherit: cmake
-installdir: software/libosmosdr/build
-makedir: software/libosmosdr/build
+category: baseline
+inherit: autoconf
 satisfy:
-  deb: osmo-sdr && libosmosdr-dev
-  pacman: gnuradio-osmosdr
-source: git+https://gitea.osmocom.org/sdr/osmo-sdr.git
+  deb: libspdlog-dev
+  rpm: spdlog-devel
+  port: spdlog
+  pacman: spdlog
+  portage: dev-logs/spdlog
+source: git+https://github.com/gabime/spdlog.git

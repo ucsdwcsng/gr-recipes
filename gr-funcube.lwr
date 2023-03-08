@@ -18,15 +18,13 @@
 #
 
 category: hardware
-configuredir: software/libosmosdr/build
 depends:
+- gnuradio
 - libusb
-description: Collection of SDR related software and hardware projects
-gitbranch: master
+- libhidapi
+description: GNURadio FUNcube Dongle and FUNcube Dongle Pro+ sources
+gitbranch: main
 inherit: cmake
-installdir: software/libosmosdr/build
-makedir: software/libosmosdr/build
 satisfy:
-  deb: osmo-sdr && libosmosdr-dev
-  pacman: gnuradio-osmosdr
-source: git+https://gitea.osmocom.org/sdr/osmo-sdr.git
+  deb: gr-funcube && qthid-fcd-controller
+source: git+https://github.com/dl1ksv/gr-funcube.git
